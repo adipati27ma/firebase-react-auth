@@ -23,6 +23,12 @@ export default function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
 
+  function logout() {
+    // this method is Promise (async)
+    // --bisa diganti dengan auth backend sendiri--
+    return auth.signOut();
+  }
+
   useEffect(() => {
     // onAuthStateChanged akan dipanggil saat method createUser dijalankan
     // method ini akan men-set token di localStorage, dan saat refresh page akan di cek kembali
@@ -38,6 +44,7 @@ export default function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    logout,
   };
 
   return (
