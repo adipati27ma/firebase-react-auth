@@ -7,6 +7,7 @@ import Dashboard from './Dashboard';
 import Login from './Login';
 import PrivateRoute from './PrivateRoute';
 import ForgotPassword from './ForgotPassword';
+import UpdateProfile from './UpdateProfile';
 
 function App() {
   return (
@@ -22,6 +23,12 @@ function App() {
                 component={Dashboard}
                 exact
                 path="/"
+                authenticated
+              />
+              <PrivateRoute
+                component={UpdateProfile}
+                exact
+                path="/update-profile"
                 authenticated
               />
               <PrivateRoute component={Signup} exact path="/signup" />
