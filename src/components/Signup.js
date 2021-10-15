@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Signup() {
@@ -8,6 +8,7 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
+  const history = useHistory();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -23,8 +24,9 @@ export default function Signup() {
       setLoading(true);
       // Because signup() is a Promise (async)
       await signup(emailRef.current.value, passwordRef.current.value);
+      history.push('/');
     } catch {
-      setError('Failed to Create an account');
+      setError('Failed to create an account');
     }
 
     setLoading(false);

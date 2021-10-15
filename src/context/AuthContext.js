@@ -13,7 +13,14 @@ export default function AuthProvider({ children }) {
 
   function signup(email, password) {
     // this method is Promise (async)
+    // --bisa diganti dengan auth backend sendiri--
     return auth.createUserWithEmailAndPassword(email, password);
+  }
+
+  function login(email, password) {
+    // this method is Promise (async)
+    // --bisa diganti dengan auth backend sendiri--
+    return auth.signInWithEmailAndPassword(email, password);
   }
 
   useEffect(() => {
@@ -30,6 +37,7 @@ export default function AuthProvider({ children }) {
   const value = {
     currentUser,
     signup,
+    login,
   };
 
   return (
