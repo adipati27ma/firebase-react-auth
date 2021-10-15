@@ -17,6 +17,8 @@ export default function AuthProvider({ children }) {
   }
 
   useEffect(() => {
+    // onAuthStateChanged akan dipanggil saat method createUser dijalankan
+    // method ini akan men-set token di localStorage, dan saat refresh page akan di cek kembali
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
