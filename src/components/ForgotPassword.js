@@ -19,9 +19,9 @@ export default function ForgotPassword() {
       setLoading(true);
       // Because signup() is a Promise (async)
       await resetPassword(emailRef.current.value);
-      setMessage('Check your email inbox for further instructions');
+      setMessage('Check your email inbox for further instructions.');
     } catch {
-      setError('Failed to reset password');
+      setError('Failed to reset password.');
     }
 
     setLoading(false);
@@ -33,6 +33,7 @@ export default function ForgotPassword() {
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>
           {error && <Alert variant="danger">{error}</Alert>}
+          {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
