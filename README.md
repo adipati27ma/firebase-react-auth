@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tutorial Video Link
+
+### by Web Dev Simplified
+
+Visit the following link to see an explanation of this application : https://www.youtube.com/watch?v=PKwu15ldZ7k
+
 ## Available Scripts
 
 In the project directory, you can run:
